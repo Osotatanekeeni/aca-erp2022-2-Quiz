@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     * { 
+        margin-top: 3%;
         box-sizing: border-box;
         font-family: 'Catamaran', sans-serif;
     }

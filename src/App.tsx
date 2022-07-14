@@ -85,10 +85,10 @@ function App() {
     <>
     <GlobalStyle />
     <Wrapper>
-      <h1>TATS' QUIZ</h1>
+      {/* <h1>TATS' QUIZ</h1> */}
       {gameOver ? (
         <button className="start" onClick={startQuiz}>
-          Start
+          Start Quiz
         </button>
       ) : null }
 
