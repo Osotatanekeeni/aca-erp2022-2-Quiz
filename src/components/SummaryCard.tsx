@@ -12,6 +12,7 @@ for (let q of QUESTIONS) {
 const SummaryCard: React.FC = () => (
 
     <Wrapper>
+        <h2>Summary of all questions</h2>
         <h3 className="number">
             {summaries}
         </h3>

@@ -5,6 +5,7 @@ import { AnswerObject } from '../App';
 
 // Styles
 import {Wrapper, ButtonWrapper} from './QuestionCard.styles';
+import ProgressBar from "@ramonak/react-progress-bar";
 
 type Props = {
     question: string;
@@ -27,6 +28,17 @@ const QuestionCard: React.FC<Props> = ({
         <p className="number">
             Question: {questionNumber} / {totalQuestions}
         </p>
+        <ProgressBar
+          margin='0'
+          height='5px'
+          labelAlignment='right'
+          isLabelVisible={false}
+          bgColor='green'
+          ariaValuemin={0}
+          ariaValuemax={100}
+          borderRadius='10px'
+          completed={Math.round((questionNumber+1)/totalQuestions * 100)}
+        />
         <p dangerouslySetInnerHTML={{ __html: question }} />
         <div>
             {answers.map(answer => (

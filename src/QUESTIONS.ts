@@ -236,31 +236,75 @@ export const QUESTIONS = [
         question: 'The git clone command does which of the follwowing',
         correct_answer: 'Both 1 & 2',
         incorrect_answers: ['Makes a local copy of the repository', 'Creates a working directory', 'Commits a new branch'],
-        summary: 'The git clone command creates a working directory and makes a local copy of the repository'
+        summary: 'The git clone command creates a working directory and makes a local copy of the repository.\n'
     },
     {
         question: 'Which command is used to check the current user configuration?',
         correct_answer: 'git config -l',
         incorrect_answers: ['git clone', 'git log', 'git status'],
-        summary: 'git config -l is used to check the current user configuration'
+        summary: 'git config -l is used to check the current user configuration.\n'
     },
     {
         question: 'Which command and tag combination is used to view detailed changes in a repo?',
         correct_answer: 'git log --summary',
         incorrect_answers: ['git log --oneline', 'git log --show', 'git log'],
-        summary: 'git log --summary is used to view a detailed description of the changes made on a repository'
+        summary: 'git log --summary is used to view a detailed description of the changes made on a repository.\n'
     },
     {
         question: 'What command can you use to view the commit id of a commit?',
         correct_answer: 'git log',
         incorrect_answers: ['git commit-id', 'git show', 'git show commit'],
-        summary: 'git log shows details about a commit including the commit id(hash)'
+        summary: 'git log shows details about a commit including the commit id(hash).\n'
     },
     {
         question: 'When do we need to append a message while using git?',
         correct_answer: 'While commiting: git commit -m "initial commit"',
         incorrect_answers: ['While adding a remote repo: git remote add -m "adding github"', 'While initializing a repo: git init -m "initial commit"', 'While staging: git add -m "adding files ..."' ],
-        summary: 'Only append a message when using git commit'
+        summary: 'Only append a message when using git commit.\n'
+    },
+    {
+        question: 'The reference to the remote repository from where a project was initially cloned is called: ',
+        correct_answer: 'origin',
+        incorrect_answers: ['tag', 'head', 'index'],
+        summary: 'The reference to the remote repository from where a project was initially cloned is called origin.\n'
+    },
+    {
+        question: 'Which command would you use to add and commit together with inline commit message?',
+        correct_answer: 'git commit -am',
+        incorrect_answers: ['git add -A', 'git commit -a', 'git commit -m'],
+        summary: 'Use git commit -am to add files to the staging area and commit.\n'
+    },
+    {
+        question: 'What command would you use to upload your code to your remote git url?',
+        correct_answer: 'git push',
+        incorrect_answers: ['git upload', 'git checkout', 'git build'],
+        summary: 'git push would upload your code to your remote git url.\n'
+    },
+    {
+        question: "What command would you use to temporarily stash changes you've made to your working directory?",
+        correct_answer: 'git stash',
+        incorrect_answers: ['git shelf', 'git ignore', 'git clone'],
+        summary: "git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, and then come back and re-apply them later on.\n"
+    },
+    {
+        question: 'What command would you use to undo local changes to the state of a git repo?',
+        correct_answer: 'git reset',
+        incorrect_answers: ['git undo', 'git merge', 'git revert'],
+        summary: 'git reset is used to undo local changes to the state of a Git repo.\n'
+    },
+    {
+        question: 'What command would you use to view all available git commands?',
+        correct_answer: 'git help --all',
+        incorrect_answers: ['git show', 'git status', 'git commands'],
+        summary: 'To view all git commands, use git help --all.\n'
+    },
+    {
+        question: 'What command is used to see all options for a the "git commit" command?',
+        correct_answer: 'git commit -help',
+        incorrect_answers: ['git commit -show', 'git commit', 'git commit -m'],
+        summary: 'use "git command -help" to see all options for a specific command.\n'
     }
+
+    
     
 ]
