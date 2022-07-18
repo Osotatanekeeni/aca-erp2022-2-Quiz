@@ -13,6 +13,7 @@ import { QuestionState, Difficulty } from './API';
 import { GlobalStyle, Wrapper } from './App.styles';
 
 import { QUESTIONS } from './QUESTIONS';
+import SummaryCard from './components/SummaryCard';
 
 export type AnswerObject = {
   question: string;
@@ -31,16 +32,18 @@ function App() {
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
+  const [summaryIsShown, setSummaryIsShown] = useState(false)
 
   // console.log(fetchQuizQuestions(10, Difficulty.EASY));
   // console.log(questions)
 
 
   const startQuiz = async () => {
+    setSummaryIsShown(false);
     setLoading(true);
     setGameOver(false);
 
-    const newQuestions = await fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY);
+    const newQuestions = fetchQuizQuestions();
 
     setQuestions(newQuestions);
     setScore(0);
@@ -49,6 +52,8 @@ function App() {
     setLoading(false);
 
   }
+
+  
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!gameOver) {
@@ -65,8 +70,19 @@ function App() {
         correct,
         correctAnswer: questions[number].correct_answer,
       };
+      
       setUserAnswers((prev) => [...prev, answerObject]);
     }
+  }
+
+  const showSummary = () => {
+    // toggle shown state
+    setSummaryIsShown(true);
+  }
+
+  const hideSummary = () => {
+    // toggle shown state
+    setSummaryIsShown(false);
   }
 
   const nextQuestion = () => {
@@ -97,9 +113,23 @@ function App() {
           Play Again
         </button>
       ) : null }
-      {!gameOver ? <p className="score">Score: {score}/{TOTAL_QUESTIONS} ({Math.round(score / TOTAL_QUESTIONS * 100)}%)</p> : null}
+
+      {userAnswers.length === TOTAL_QUESTIONS && !summaryIsShown ? (
+        <button className="start" onClick={showSummary}>
+          View Summary
+        </button>
+      ) : null}
+
+      {summaryIsShown ? (
+          <button className="start" onClick={hideSummary}>
+            Hide Summary
+          </button>
+        ) : null}
+      
+      {!gameOver ? <p className="score">Score: {score} ({Math.round(score / TOTAL_QUESTIONS * 100)}%)</p> : null}
       {loading && <p>Loading Questions ...</p>}
-      {!loading && !gameOver && (
+
+      {!loading && !gameOver && !summaryIsShown && (
         <QuestionCard 
         questionNumber={number + 1}
         totalQuestions={TOTAL_QUESTIONS}
@@ -108,6 +138,10 @@ function App() {
         userAnswer={userAnswers ? userAnswers[number] : undefined}
         callback={checkAnswer}
       />
+      )}
+      {summaryIsShown && (
+        <SummaryCard
+        />
       )}
 
       {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 ? (

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    width: 70%;
+    width: 100%;
     max-width: 1100px;
-    background: #cfd8dc;
+    background: #fff;
     border-radius: 10px;
-    border: 2px solid #0085a3;
+    border: 2px solid #000;
     padding: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     text-align: center;
@@ -13,7 +13,6 @@ export const Wrapper = styled.div`
 
     p {
         font-size: 1rem;
-
     }
 
 `;
@@ -43,17 +42,17 @@ export const ButtonWrapper = styled.div<ButtonWrapperProps>`
                 ? 'linear-gradient(90deg, #00e676, #00c853 )' 
                 : !correct && userClicked
                 ? 'linear-gradient(90deg, #ff5656, #c16868)'
-                : 'linear-gradient(90deg, #757575 , #424242 )'};
+                : 'fff'};
                 //effect 0.4s
         animation: ${({ correct, userClicked }) =>
             correct && !userClicked
                 ? 'effect 0.2s'
                 : 'none'};
-        border: 3px solid #fff;
+        border: 1px solid #000;
         box-shadow: 1px 2px 0px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        color: #fff;
-        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+        color: #000;
+        
     }
 
     @keyframes effect {

@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
 
     > p {
         color: #fff;
@@ -36,6 +36,7 @@ export const Wrapper = styled.div`
         font-size: 2rem;
         font-family: 'Chewy', cursive;
         margin: 0;
+        
     }
 
     h1 {
