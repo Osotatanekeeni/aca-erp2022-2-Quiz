@@ -28,7 +28,7 @@ const QuestionCard: React.FC<Props> = ({
         <p className="number">
             Question: {questionNumber} / {totalQuestions}
         </p>
-        <ProgressBar
+        {/* <ProgressBar
           margin='0'
           height='5px'
           labelAlignment='right'
@@ -38,7 +38,7 @@ const QuestionCard: React.FC<Props> = ({
           ariaValuemax={100}
           borderRadius='10px'
           completed={Math.round((questionNumber+1)/totalQuestions * 100)}
-        />
+        /> */}
         <p dangerouslySetInnerHTML={{ __html: question }} />
         <div>
             {answers.map(answer => (
