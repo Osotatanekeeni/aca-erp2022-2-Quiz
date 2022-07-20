@@ -5,7 +5,7 @@ import { AnswerObject } from '../App';
 
 // Styles
 import {Wrapper, ButtonWrapper} from './QuestionCard.styles';
-import ProgressBar from "@ramonak/react-progress-bar";
+// import ProgressBar from "@ramonak/react-progress-bar";
 
 type Props = {
     question: string;
