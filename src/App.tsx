@@ -7,7 +7,7 @@ import {fetchQuizQuestions } from './API';
 import QuestionCard from './components/QuestionCard';
 
 // Types
-import { QuestionState, Difficulty } from './API';
+import { QuestionState } from './API';
 
 // Styles
 import { GlobalStyle, Wrapper } from './App.styles';
@@ -34,10 +34,6 @@ function App() {
   const [gameOver, setGameOver] = useState(true);
   const [summaryIsShown, setSummaryIsShown] = useState(false)
 
-  // console.log(fetchQuizQuestions(10, Difficulty.EASY));
-  // console.log(questions)
-
-
   const startQuiz = async () => {
     setSummaryIsShown(false);
     setLoading(true);
@@ -52,8 +48,6 @@ function App() {
     setLoading(false);
 
   }
-
-  
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!gameOver) {
